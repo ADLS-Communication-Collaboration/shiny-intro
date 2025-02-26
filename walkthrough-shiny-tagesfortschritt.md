@@ -1,15 +1,15 @@
 
 
-In R shiny generieren wir HTML aus R. CSS wird weiterhin in CSS geschrieben, JavaScript ersetzen wir durch R.
+In R shiny we generate HTML from R. CSS is still written in CSS, JavaScript is replaced by R.
 
-Für eine shiny app braucht es im Minimum 3 dinge:
+For a shiny app you need at least 3 things:
 
-- Ein User Interface in HTML
-- Eine "Server Logik" (vorher JS, jetzt eine R Funktion mit 3 Argumenten)
-- die Funktion `shinyApp()`, welche das Userinterface und die Server Logik zusammenfügt.
+- A user interface in HTML
+- A “server logic” (previously JS, now an R function with 3 arguments)
+- the function `shinyApp()`, which combines the user interface and the server logic.
 
 
-Starten wir, in dem wir ein R file mit diesen Elementen erstellen:
+Let's start by creating an R file with these elements:
 
 ```r
 library(shiny)
@@ -21,16 +21,17 @@ server <- function(input, output, session){}
 shinyApp(ui, server)
 ```
 
-Wir können das Script zeile für Zeile ausführen und die verschiedenen Objekte anschauen.
+We can execute the script line by line and view the various objects.
 
 
-Ohne Userinterface sieht das ganze noch sehr leer aus. 
+Without a user interface, the whole thing still looks very empty. 
+
 
 ```diff
 library(shiny)
 
 -ui <- c()
-+ui <- h1("Tagesfortschritt")
++ui <- h1("Todays Progress")
 
 server <- function(input, output, session){}
 
@@ -43,8 +44,8 @@ library(shiny)
 
 -ui <- h1("Tagesfortschritt")
 +ui <- tagList(
-+   h1("Tagesfortschritt"),
-+   p("Wie Weit ist der Tag fortgeschritten?")
++   h1("Todays Progress"),
++   p("How far has this day progressed?")
 +)
 
 
@@ -53,12 +54,12 @@ server <- function(input, output, session){}
 shinyApp(ui, server)
 ```
 
-Nun möchten wir, wie vorher, den Tagesfortschritt ermitteln und darstellen. 
-Zuvor hatten wir dies in JS programmiert, nun können wir dies in R programmieren.
+Now, we want to determine and display the daily progress. 
+
 
 ```diff
 library(shiny)
-library(lubridate)
++ library(lubridate)
 
 ui <- tagList(
      h1("Tagesfortschritt"),
@@ -70,6 +71,8 @@ server <- function(input, output, session){
 +  now <- Sys.time()
 +  
 +  percent <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
++ 
++ print(percent)
 
 }
 
@@ -77,7 +80,7 @@ shinyApp(ui, server)
 ```
 
 
-Viel eleganter, v.a. um später die übersicht zu behalten, ist es, wenn wir die Berechnung in eine Funktion auslagern.
+It is much more elegant, especially to keep the overview later, if we outsource the calculation to a function.
 
 ```diff
 library(shiny)
@@ -109,16 +112,8 @@ shinyApp(ui, server)
 ```
 
 
+How do I get the percentage value into the HTML? 
 
-
-
-Wie krieg ich nun den Prozentwert in das HTML? 
-
-Jetzt kommt "reactivity" in's Spiel.
-
-- Reactivity is ungewohnt und sehr gewöhnungsbedüftig
-- Reactivity ist ein zentrales Element von Shiny und kann nicht umgangen werden
-- Wer Reactivity nicht lernen kann, ohne das "Warum" zu verstehen sollte *unbedingt* [mastering-shiny.org/reactive-motivation](https://mastering-shiny.org/reactive-motivation.html) lesen
 
 ```diff 
 library(shiny)
@@ -145,7 +140,8 @@ server <- function(input, output, session){
 shinyApp(ui, server)
 ```
 
-Um die App zu aktualisieren, müssen wir die Funktion `invalidateLater()` verwenden.
+To update the app, we need to use the `invalidateLater()` function.
+
 
 ```diff
 library(shiny)
@@ -177,8 +173,8 @@ shinyApp(ui, server)
 ```
 
 
-Wenn wir zu 100% user HTML basiertes App rekonstruieren wollen, müssen wir noch 
-folgenden Schitt machen:
+If we want to add a Progressbar, we have to do the following step 
+the following step:
 
 
 ```diff
