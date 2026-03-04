@@ -1,8 +1,851 @@
-<html xmlns="http://www.w3.org/1999/xhtml">    
-  <head>      
-    <title>Redirect to walkthrough-shiny-tagesfortschritt.html</title>      
-    <meta http-equiv="refresh" content="0;URL='walkthrough-shiny-tagesfortschritt.html'" />    
-  </head>    
-  <body> 
-  </body>  
-</html>     
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title></title>
+
+	<link rel="stylesheet" href="revealjs/dist/reset.css">
+	<link rel="stylesheet" href="revealjs/dist/reveal.css">
+	<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section class="titleslide">
+					<h2 class="r-fit-text">Geovisualization & Cartography 2</h2>
+					<h2 class="r-fit-text fragment">A Quick Introduction to Shiny</h2>
+
+					<!-- <p style="font-size: large; text-align: left;">Slides</p> -->
+					<!-- <ul class="fragment" style="font-size: large; text-align: left;"> -->
+					<!-- </ul> -->
+				</section>
+
+				
+
+			</section>
+			<section>
+				<section class="titleslide">
+					<h1>What is Shiny?</h1>
+				</section>
+				<section>
+					<div>
+
+						<div style="background-color: white; border-radius: 20px;">
+							<p
+								style="font-size: large;text-align: left; padding-left: 30px;background-color: gray; border-radius: 20px 20px 0px 0px;">
+								https://shiny.posit.co/</p>
+
+							<!-- <img data-src="images/shiny.rstudio.png" style="width: 50%"> -->
+							<div class="img-overlay-container" 
+								style="background-image: url('images/shiny.rstudio.png'); height: 500px;">
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="1"
+									style="width: 340px; height: 60px; top: 130px; left: 220px"></div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="2"
+									style="width: 310px; height: 45px; top: 310px; left: 330px"></div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="2"
+									style="width: 165px; height: 45px; top: 380px; left: 300px; border: 1px solid red;">
+								</div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="2"
+									style="width: 190px; height: 45px; top: 380px; left: 470px; border: 1px solid red;">
+								</div>
+
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="4"
+									style="width: 270px; height: 60px; top: 190px; left: 435px"></div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="4"
+									style="width: 310px; height: 60px; top: 250px; left: 330px"></div>
+								<!-- <div style="position: absolute; background-color: rgba(255, 0, 0, 0.156); width: 340px; height: 60px;top: 130px; left: 220px"></div> -->
+							</div>
+						</div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Easy Web Apps</li>
+							<li>Get Started in R</li>
+							<li>No web development skills required</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<div
+						style="background-color: white; border-radius: 20px; height: 500px; display: flex; justify-content: center;">
+
+						<div style="width: 70%">
+							<p style="color: black; font-size: 50px; font-weight: bold;">Easy cycling without the
+								compromises</p>
+							<p style="color: black; font-size: 15px;">no balancing skills required. Get started with training wheels!</p>
+						
+
+							<!-- <div style="background-image: url('../images/SM-903QW.jpg'); height: 300px; "></div> -->
+							<img class="" data-src="images/SM-903QW.jpg" height="250px">
+						</div>
+
+
+
+
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Using Shiny without any web development knowledge is like cycling with training wheels
+							</li>
+							<li>Quick success, but the knowledge doesn't scale</li>
+							<li>Training wheels become a burden</li>
+						</ul>
+					</aside>
+				</section>
+
+
+				<section data-background-image="images/mecre2022.png" data-background-size="contain">
+
+					<aside class="notes">
+						<ul>
+							<li>Children who use the BB (Balance Bike) as the first bike had a significantly lower LA
+								(Learning Age) than Children who did not use it.</li>
+							<li>To maximise its effect, the balance bike should be used in the beginning of the learning
+								process</li>
+						</ul>
+					</aside>
+
+				</section>
+
+
+	
+
+
+
+			</section>
+			<section>
+				<section class="titleslide">
+					<h2 class="fragment highlight-red">A Quick</h2>
+					<h1 class="r-fit-text"> Introduction to Webtechnologies</h1>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-stack" id="wenn1">
+						<div class="wenn fragment html" data-id="html"></div>
+						<div class="wenn fragment css" data-id="css"></div>
+						<div class="wenn fragment js" data-id="js"></div>
+					</div>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn html" data-id="html"></div>
+						<div class="wenn css" data-id="css"></div>
+						<div class="wenn js" data-id="js"></div>
+					</div>
+				</section>
+
+
+
+				<section data-auto-animate data-background-image="images/house-ge3d0e4f8f_1920.jpg" class="filter">
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn wenn-large html" data-id="html"></div>
+						<div class="wenn wenn-small css" data-id="css"></div>
+						<div class="wenn wenn-small js" data-id="js"></div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>HTML / "The brickwork"</li>
+							<li>Forms the basic structure of every website</li>
+							<li>Existed first (1993) — technically sufficient on its own"</li>
+							<li><a href="http://motherfuckingwebsite.com/" target="_blank">motherfuckingwebsite.com/</a>
+							</li>
+							<li><a href="https://www.angelfire.com/super/badwebs/"
+									target="_blank">angelfire.com/super/badwebs/</a></li>
+						</ul>
+					</aside>
+
+				</section>
+
+
+				<section data-auto-animate data-background-image="images/How-to-Repair-old-walls.png" class="filter">
+
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn wenn-small html" data-id="html"></div>
+						<div class="wenn wenn-large css" data-id="css"></div>
+						<div class="wenn wenn-small js" data-id="js"></div>
+
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>CSS: "The paint"</li>
+							<li>Developed in 1996 to make HTML more consistent and visually appealing
+								</li>
+							<li>Determines how the various elements of a website look (colors, size...)</li>
+						</ul>
+					</aside>
+
+				</section>
+				<section data-auto-animate data-background-image="images/phone-499991_960_720.jpg" class="filter">
+
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn wenn-small html" data-id="html"></div>
+						<div class="wenn wenn-small css" data-id="css"></div>
+						<div class="wenn wenn-large js" data-id="js"></div>
+					</div>
+
+
+					<aside class="notes">
+						<ul>
+							<li>Javascript: "The magician"</li>
+							<li>Developed in 1995 to make HTML dynamic and interactive</li>
+							<li>Determines how the various elements of a website behave</li>
+							<li>(animations, interactions, reactions to user actions)</li>
+						</ul>
+					</aside>
+				</section>
+
+				
+		
+			</section>
+
+
+
+			<section>
+				<section class="titleslide">
+
+					<h2>HTML | CSS | JS</h2>
+					<h2>→</h2>
+					<h2>Shiny</h2>
+
+				</section>
+
+				<section>
+					<div style="display: grid; grid-template-columns: 50% 50%; column-gap: 5px; row-gap: 5px;">
+
+						<div class="ui-server" style="grid-column-start: span 2;">
+							<h3 class="r-fit-text" style="padding: 0 40px 0 40px;">Components of an Shiny App</h3>
+						</div>
+						<div class="fragment ui-server">
+							<i class="fa-solid fa-tablet-screen-button fa-5x"></i>
+							<p>User Interface</p>
+						</div>
+						<div class="fragment ui-server">
+							<i class="fa-solid fa-server fa-5x"></i>
+							<p>Server</p>
+						</div>
+
+						<div class="fragment ui-server font-large">consits of HTML+CSS, generated in R or Python</div>
+						<div class="fragment ui-server font-large">consits or R / Python Code (replaces Javascript)</div>
+						<div class="fragment ui-server font-large">runs in the users browser</div>
+						<div class="fragment ui-server font-large">runs on a Shiny Server</div>
+
+
+
+					</div>
+
+				</section>
+
+
+				<section>
+					<pre><code data-trim class="r" data-line-numbers="|1|3|5|7">
+						library(shiny)
+
+						ui <- ...                           # HTML + CSS
+
+						server <- ...                       # Server Logic
+
+						shinyApp(ui = ui, server = server)
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li><code>ui <- ...</code>: either pure html / css or r-code that generates this
+							</li>
+							<li><code>server <- ...</code>: A function describing the server logic</li>
+							<li><code>shinyApp(ui = ui, server = server)</code> Creates a shiny object</li>
+
+						</ul>
+
+						Let's try this out in R
+					</aside>
+				</section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png">
+				</section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png" data-transition="fade-in"
+					class="blur">
+
+					<h1 class="black-stroke">let's get our hands dirty!</h1>
+
+					<aside class="notes">
+
+						Exercise 2: "walkthrough-shiny-tagesfortschritt"
+
+						<ol>
+							<li>Open RStudio</li>
+							<li>Create a new project (!!!)</li>
+							<li>Create a new R file</li>
+							<li>Save as > tagesfortschritt.R</li>
+						</ol>
+					</aside>
+				</section>
+
+			</section>
+
+			<section>
+				<section class="titleslide">
+					<h1>Basic Reactivity</h1>
+				</section>
+
+				<section>
+					<i class="fa-solid fa-quote-left fa-1x fa-pull-left"></i>
+					<p style="text-align: left;">The key idea of reactive programming is to specify
+						<span class="fragment custom my-hl">a graph of dependencies</span> so that
+						<span class="fragment custom my-hl">when an input changes</span>,
+						<span class="fragment custom my-hl">all related outputs are automatically updated</span>.
+					</p>
+
+
+					<span style="font-size: 20px;">Wickham (2019) in <a
+							href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny</a></span>
+
+					<aside class="notes">
+						Why does this matter? Without reactivity, the entire R script would re-run every time anything changes in the app
+					</aside>
+				</section>
+
+				<section>
+					<div class="r-stack" style="width: 60%; margin-left: auto; margin-right: auto;">
+						<!-- <img class="fragment" src="images/reactivity-01.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-02.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-03.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-04.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<img class="" src="images/reactivity-05.png" alt="reactivity"
+							style="width: 100%; height: auto;">
+						<!-- <img class="fragment" src="images/reactivity-06.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-07.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-08.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-09.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-10.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-11.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-12.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					</div>
+
+					<span style="font-size: 20px;">aus Wickham (2019), <a
+							href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny</a></span>
+
+				</section>
+
+				<section>
+
+					<i class="fa-solid fa-quote-left fa-1x fa-pull-left"></i>
+					<p style="text-align: left;">This makes the flow of an app considerably simpler,
+						<span class="fragment custom my-hl">but it takes a while to get your head around</span>
+						how it all fits together.
+					</p>
+
+					<div style="text-align: left;" class="fragment">
+						<p>Futher reading:</p>
+						<ul>
+							<li><a
+									href="https://mastering-shiny.org/basic-reactivity.html">mastering-shiny.org/basic-reactivity.html</a>
+							</li>
+							<li><a
+									href="https://mastering-shiny.org/reactivity-intro.html">mastering-shiny.org/reactivity-intro.html</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					
+
+						<div class="img-overlay-container" style="background-image: url('images/reactive.png'); height: 552px;">
+						
+							<div class="fragment fade-in-then-out img-highlight" 
+										style="width: 110px; height: 60px; top: 250px; left: 40px"></div>
+						</div>
+				
+
+					<aside class="notes">
+						<ul>
+							<li>Highlighted: "Reactive Sources" — the <code>input$*</code> values created by UI widgets</li>
+							<li>Whenever a user interacts with a widget, its input value changes</li>
+							<li>Shiny automatically detects which outputs depend on that input and re-runs only those</li>
+						</ul>
+					</aside>
+
+					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
+				</section>
+
+
+				<section>
+
+					Reactive Inputs
+
+					<div style="grid-template-columns: auto; gap: 15px;">
+
+						<div class="reactive-input-rows fragment">
+							<div>actionButton()</div>
+							<div><input class="action" type="button" value="Go"></div>
+						</div>
+						<div class="reactive-input-rows fragment">
+							<div>checkboxGroupInput()</div>
+							<div>
+								<input type="checkbox" id="scales" name="scales" checked>
+								<label for="scales">Choice 1</label> <br>
+
+								<input type="checkbox" id="horns" name="horns">
+								<label for="horns">Choice 2</label>
+							</div>
+						</div>
+						<div class="reactive-input-rows fragment">
+							<div>checkboxInput()</div>
+							<div>
+								<input type="checkbox" id="scales" name="scales" checked>
+								<label for="scales">Choose</label> <br>
+							</div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>dateInput() / dateRangeInput()</div>
+							<div><input type="date" id="start"></div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>fileInput()</div>
+							<div><input type="file" id="avatar"></div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>numericInput()</div>
+							<div><input type="number"></div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>passwordInput()</div>
+							<div><input type="password"></div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>radioButtons()</div>
+							<div>
+								<input type="radio" id="huey" name="drone" value="huey" checked>
+								<label for="huey">Huey</label>
+
+								<input type="radio" id="dewey" name="drone" value="dewey">
+								<label for="dewey">Dewey</label>
+
+								<input type="radio" id="louie" name="drone" value="louie">
+								<label for="louie">Louie</label>
+							</div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>sliderInput()</div>
+							<div><input type="range"></div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>submitButton()</div>
+							<div><input class="action" type="button" value="Apply Changes"></div>
+						</div>
+
+						<div class="reactive-input-rows fragment">
+							<div>textInput()</div>
+							<div><input type="text"></div>
+						</div>
+
+					</div>
+
+					<p class="fragment" style="font-size: large;">See <a
+							href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet/</a>
+					</p>
+
+					<aside class="notes">
+						<ul>
+							<li>Each widget function takes an <code>inputId</code> as first argument — access its value in the server via <code>input$id</code></li>
+							<li>The second argument is usually a human-readable label shown above the widget</li>
+							<li>All widgets shown here come with base Shiny; many more available via extension packages (e.g. shinyWidgets)</li>
+						</ul>
+					</aside>
+
+				</section>
+
+
+
+				
+
+				<section>
+					<!-- <img data-src="images/reactive.png"></img> -->
+
+					<div class="img-overlay-container" style="background-image: url('images/reactive.png'); height: 552px;">
+						<div class="fragment fade-in-then-out img-highlight" 
+									style="width: 110px; height: 60px; top: 250px; left: 815px"></div>
+					</div>
+
+					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
+				</section>
+
+
+
+				<section>
+
+					Reactive Outputs
+
+					<pre><code data-trim class="r" data-line-numbers="|6|3">
+						library(shiny)
+
+						ui <- plotOutput("plot")
+
+						server <- function(input, output, session){
+							output$plot <- renderPlot(plot(rnorm(100)))
+						}
+
+
+						shinyApp(ui, server)
+					</code></pre>
+
+					<aside class="notes">
+						Reactive outputs always come in pairs: render*() to generate the output on the server, *Output() to display it in the UI.
+					</aside>
+				</section>
+
+				<section>
+
+					Reactive Outputs
+
+
+
+					<div class="reactive-outputs">
+
+						<div style="background-color:darkslategray;">Server |<code>render*()</code></div>
+						<div style="background-color:darkslategray;">UI |<code>*Output()</code></div>
+
+						<div>renderDataTable()</div>
+						<div>dataTableOutput()</div>
+
+						<div>renderImage()</div>
+						<div>imageOutput()</div>
+
+						<div>renderPlot()</div>
+						<div>plotOutput()</div>
+
+						<div>renderPrint()</div>
+						<div>verbatimTextOutput()</div>
+
+						<div>renderTable()</div>
+						<div>tableOutput()</div>
+
+						<div>renderText()</div>
+						<div>textOutput()</div>
+
+						<div>renderUI()</div>
+						<div>uiOutput()</div>
+
+					</div>
+
+					<ul class="fragment" style="font-size: large; padding-top: 20px;">
+						<li>See <a
+								href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet/</a>
+						</li>
+						<li>More output types are available at <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a>
+						</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Reactive outputs always come in pairs: render*() to generate the output on the server, *Output() to display it in the UI.
+								<li>The respective packages usually provide the functions needed to integrate their outputs into Shiny</li>
+						</ul>
+
+					</aside>
+
+
+				</section>
+
+				<section>
+					<!-- <img data-src="images/reactive.png"></img> -->
+
+					<div class="img-overlay-container" style="background-image: url('images/reactive.png'); height: 552px;">
+						<div class="fragment fade-in-then-out img-highlight" style="width: 180px; height: 40px; top: 90px; left: 180px"></div>
+						<div class="fragment fade-in-then-out img-highlight" style="width: 180px; height: 80px; top: 100px; left: 530px"></div>
+						<div class="fragment fade-in-then-out img-highlight" style="width: 160px; height: 80px; top: 395px; left: 450px"></div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Highlight 1: Reactive Sources — <code>input$*</code> values, set by UI widgets</li>
+							<li>Highlight 2: Reactive Conductors — <code>reactive()</code>, <code>reactiveVal()</code>: intermediate computations that cache their result and only re-run when their dependencies change</li>
+							<li>Highlight 3: Reactive Endpoints — <code>output$*</code> and <code>observe()</code>: consume reactive values and produce side effects (rendered output, file writes, etc.)</li>
+							<li>Data flows one direction: Sources → Conductors → Endpoints</li>
+						</ul>
+					</aside>
+
+					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>				</section>
+
+
+
+
+
+		
+			</section>
+
+	
+
+			<section>
+				<section class="titleslide">
+					<h1>Layouts</h1>
+
+				</section>
+
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									# input 1
+									# input 2
+									# output 1
+									# output 2
+								)
+							</code></pre>
+
+						</div>
+
+						<div>
+							<div class="shiny-container">
+								<div data-id="input1" class="shiny-input">Input 1</div>
+								<div data-id="input2" class="shiny-input">Input 2</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+								<div data-id="output2" class="shiny-output">Output 2</div>
+							</div>
+						</div>
+
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									# input 1
+									# input 2
+									# output 1
+									# output 2
+								)
+							</code></pre>
+
+						</div>
+						<div>
+							<div class="shiny-container">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="input1" class="shiny-input">Input 1</div>
+								<div data-id="input2" class="shiny-input">Input 2</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+								<div data-id="output2" class="shiny-output">Output 2</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									sidebarLayout(
+										sidebarPanel(
+											# input 1
+											# input 2
+										),
+										mainPanel(
+											# output 1
+											# output 2
+										)
+									)
+							</code></pre>
+
+						</div>
+						<div>
+							<div class="shiny-container shiny-container2">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="input1" class="shiny-input">Input 1</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+
+								<div data-id="input2" class="shiny-input">Input 2</div>
+								<div data-id="output2" class="shiny-output">Output 2</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									sidebarLayout(
+										position = "right",
+										sidebarPanel(
+											# input 1
+											# input 2
+										),
+										mainPanel(
+											# output 1
+											# output 2
+										)
+									)
+							</code></pre>
+
+						</div>
+						<div>
+							<div class="shiny-container shiny-container3">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+								<div data-id="input1" class="shiny-input">Input 1</div>
+
+								<div data-id="output2" class="shiny-output">Output 2</div>
+								<div data-id="input2" class="shiny-input">Input 2</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									sidebarLayout(
+										fluidRow(
+											column(
+												# Input 1 
+												width = 3
+												),
+											column(
+												# Output 1 
+												width = 9
+												),
+										  ),
+										fluidRow(
+											column(
+												# Input 2 
+												width = 6
+												),
+											column(
+												# Output 2 
+												width = 6
+												),
+										  ),
+										  )
+									)
+							</code></pre>
+
+						</div>
+						<div>
+							<div class="shiny-container shiny-container4">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="input1" class="shiny-input" style="grid-column-start: span 3;">Input 1</div>
+								<div data-id="output1" class="shiny-output" style="grid-column-start: span 9;">Output 1</div>
+								<div data-id="input2" class="shiny-input" style="grid-column-start: span 5;">Input 1</div>
+								<div data-id="output2" class="shiny-output" style="grid-column-start: span 7;">Output 2</div>
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<p style="text-align: left;">There are many other layouts:</p>
+
+					<ul>
+						<li class="fragment"><code>fluidPage()</code> with <code>tabsetPanel()</code> and
+							<code>tabPanel()</code>
+						</li>
+						<li class="fragment"><code>fluidPage()</code> with <code>navlistPanel()</code> and
+							<code>tabPanel()</code>
+						</li>
+						<li class="fragment"><code>navbarPage()</code> with <code>tabPanel()</code> and
+							<code>navbarMenu()</code>
+						</li>
+
+					</ul>
+
+					<p class="fragment" style="text-align: left; font-size: large;">See also:
+						<a
+							href="https://shiny.posit.co/r/articles/build/layout-guide/">shiny.posit.co/r/articles/build/layout-guide/</a>
+						and
+						<a
+							href="https://mastering-shiny.org/action-layout.html">mastering-shiny.org/action-layout.html</a>
+
+					</p>
+
+
+				</section>
+				
+			</section>
+
+
+			<section>
+				<section class="titleslide">
+					<h1>Publish / Deploy</h1>
+				</section>
+
+				<section>
+
+					<p>Options for publishing Shiny apps</p>
+
+
+					<div class="deploy">
+
+				
+						<div class="fragment">
+							<div>
+								<p>Shinyapps.io</p>
+								<a href="https://www.shinyapps.io">www.shinyapps.io</a>
+							</div>
+
+						</div>
+						<div class="fragment">
+							Web-R (WASM) / ShinyLive
+						</div>
+						<div class="fragment">
+							Custom R Shiny Server
+						</div>
+
+					</div>
+				</section>
+			</section>
+
+
+
+		</div>
+	</div>
+	<script src="revealjs/dist/reveal.js"></script>
+	<script src="revealjs/plugin/notes/notes.js"></script>
+	<script src="revealjs/plugin/highlight/highlight.js"></script>
+	<script src="revealjs/plugin/zoom/zoom.js"></script>
+	<script src="revealjs/plugin/search/search.js"></script>
+	<script>
+
+		Reveal.initialize({
+			hash: true,
+			autoAnimateEasing: "cubic-bezier(0.83, 0, 0.17, 1)",
+			plugins: [RevealHighlight, RevealNotes, RevealZoom, RevealSearch]
+		});
+	</script>
+</body>
+
+</html>
