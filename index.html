@@ -100,10 +100,10 @@
 
 					<aside class="notes">
 						<ul>
-							<li>Shiny ohne jegliches wissen über web development ist wie Fahrrad fahren mit Stützrädern
+							<li>Using Shiny without any web development knowledge is like cycling with training wheels
 							</li>
-							<li>Schneller Erfolg, jedoch ist das wissen nicht skalierbar</li>
-							<li>Stützräder werden zur Balast</li>
+							<li>Quick success, but the knowledge doesn't scale</li>
+							<li>Training wheels become a burden</li>
 						</ul>
 					</aside>
 				</section>
@@ -161,9 +161,9 @@
 
 					<aside class="notes">
 						<ul>
-							<li>HTML / "Das Mauerwerk"</li>
-							<li>Bildet das Grundgerüst jeder website</li>
-							<li>Exisiterte als erstes (1993), reicht eigentlich auch aus"</li>
+							<li>HTML / "The brickwork"</li>
+							<li>Forms the basic structure of every website</li>
+							<li>Existed first (1993) — technically sufficient on its own"</li>
 							<li><a href="http://motherfuckingwebsite.com/" target="_blank">motherfuckingwebsite.com/</a>
 							</li>
 							<li><a href="https://www.angelfire.com/super/badwebs/"
@@ -185,11 +185,10 @@
 
 					<aside class="notes">
 						<ul>
-							<li>CSS: "Die Farbe"</li>
-							<li>Wurde 1996 entwickelt, um html konsistenter und eifacher (ansprechend) gestalten zu
-								können</li>
-							<li>bestimmt, wie die verschiedenen elemente einer website auszusehen haben (Farben,
-								Grösse...) </li>
+							<li>CSS: "The paint"</li>
+							<li>Developed in 1996 to make HTML more consistent and visually appealing
+								</li>
+							<li>Determines how the various elements of a website look (colors, size...)</li>
 						</ul>
 					</aside>
 
@@ -205,10 +204,10 @@
 
 					<aside class="notes">
 						<ul>
-							<li>Javascript: "Der Zauberer"</li>
-							<li>Wurde 1995 entwickelt, um html dynamisch und interaktiv zu machen</li>
-							<li>bestimmt, wie die verschiedenen elemente einer website sich verhalten</li>
-							<li>(Animationen, Interaktionen, Reaktionen auf Benutzeraktionen)</li>
+							<li>Javascript: "The magician"</li>
+							<li>Developed in 1995 to make HTML dynamic and interactive</li>
+							<li>Determines how the various elements of a website behave</li>
+							<li>(animations, interactions, reactions to user actions)</li>
 						</ul>
 					</aside>
 				</section>
@@ -268,14 +267,14 @@
 
 					<aside class="notes">
 						<ul>
-							<li><code>ui <- ...</code>: either pure html / css oder r-code, which generates this
+							<li><code>ui <- ...</code>: either pure html / css or r-code that generates this
 							</li>
 							<li><code>server <- ...</code>: A function describing the server logic</li>
 							<li><code>shinyApp(ui = ui, server = server)</code> Creates a shiny object</li>
 
 						</ul>
 
-						Probieren wir das mal in R aus
+						Let's try this out in R
 					</aside>
 				</section>
 				<section data-background-image="images/bicycle-industry-613462980-full.png">
@@ -287,12 +286,12 @@
 
 					<aside class="notes">
 
-						Übung 2: "walkthrough-shiny-tagesfortschritt"
+						Exercise 2: "walkthrough-shiny-tagesfortschritt"
 
 						<ol>
-							<li>RStudio öffnen</li>
-							<li>Neues Projekt (!!!) erstellen</li>
-							<li>Neues R File erstellen</li>
+							<li>Open RStudio</li>
+							<li>Create a new project (!!!)</li>
+							<li>Create a new R file</li>
 							<li>Save as > tagesfortschritt.R</li>
 						</ol>
 					</aside>
@@ -318,8 +317,7 @@
 							href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny</a></span>
 
 					<aside class="notes">
-						Warum ist das wichtig? Weil sonst das ganze R Script bei jeder Veränderung im App gesamthaft
-						ausgeführt werden würde
+						Why does this matter? Without reactivity, the entire R script would re-run every time anything changes in the app
 					</aside>
 				</section>
 
@@ -375,6 +373,14 @@
 										style="width: 110px; height: 60px; top: 250px; left: 40px"></div>
 						</div>
 				
+
+					<aside class="notes">
+						<ul>
+							<li>Highlighted: "Reactive Sources" — the <code>input$*</code> values created by UI widgets</li>
+							<li>Whenever a user interacts with a widget, its input value changes</li>
+							<li>Shiny automatically detects which outputs depend on that input and re-runs only those</li>
+						</ul>
+					</aside>
 
 					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
 				</section>
@@ -463,6 +469,13 @@
 							href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet/</a>
 					</p>
 
+					<aside class="notes">
+						<ul>
+							<li>Each widget function takes an <code>inputId</code> as first argument — access its value in the server via <code>input$id</code></li>
+							<li>The second argument is usually a human-readable label shown above the widget</li>
+							<li>All widgets shown here come with base Shiny; many more available via extension packages (e.g. shinyWidgets)</li>
+						</ul>
+					</aside>
 
 				</section>
 
@@ -501,8 +514,7 @@
 					</code></pre>
 
 					<aside class="notes">
-						Reactive Outputs kommen immer in paaren. render* um den output zu generieren, *Output um den
-						output zu rendern.
+						Reactive outputs always come in pairs: render*() to generate the output on the server, *Output() to display it in the UI.
 					</aside>
 				</section>
 
@@ -544,16 +556,14 @@
 						<li>See <a
 								href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet/</a>
 						</li>
-						<li>Mehr ouputs sind auf <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a> zu finden
+						<li>More output types are available at <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a>
 						</li>
 					</ul>
 
 					<aside class="notes">
 						<ul>
-							<li>Reactive Outputs kommen immer in paaren. render* um den output zu generieren, *Output um
-								den output zu rendern.</li>
-							<li>die jeweiligen Packages liefern meist die benötigten Funktionen, um diesen in Shiny zu
-								integrieren</li>
+							<li>Reactive outputs always come in pairs: render*() to generate the output on the server, *Output() to display it in the UI.
+								<li>The respective packages usually provide the functions needed to integrate their outputs into Shiny</li>
 						</ul>
 
 					</aside>
@@ -569,6 +579,15 @@
 						<div class="fragment fade-in-then-out img-highlight" style="width: 180px; height: 80px; top: 100px; left: 530px"></div>
 						<div class="fragment fade-in-then-out img-highlight" style="width: 160px; height: 80px; top: 395px; left: 450px"></div>
 					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Highlight 1: Reactive Sources — <code>input$*</code> values, set by UI widgets</li>
+							<li>Highlight 2: Reactive Conductors — <code>reactive()</code>, <code>reactiveVal()</code>: intermediate computations that cache their result and only re-run when their dependencies change</li>
+							<li>Highlight 3: Reactive Endpoints — <code>output$*</code> and <code>observe()</code>: consume reactive values and produce side effects (rendered output, file writes, etc.)</li>
+							<li>Data flows one direction: Sources → Conductors → Endpoints</li>
+						</ul>
+					</aside>
 
 					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>				</section>
 
@@ -749,25 +768,25 @@
 					</div>
 				</section>
 				<section>
-					<p style="text-align: left;">Es gibt noch viele andere Layouts:</p>
+					<p style="text-align: left;">There are many other layouts:</p>
 
 					<ul>
-						<li class="fragment"><code>fluidPage()</code> mit <code>tabsetPanel()</code> und
+						<li class="fragment"><code>fluidPage()</code> with <code>tabsetPanel()</code> and
 							<code>tabPanel()</code>
 						</li>
-						<li class="fragment"><code>fluidPage()</code> mit <code>navlistPanel()</code>und
+						<li class="fragment"><code>fluidPage()</code> with <code>navlistPanel()</code> and
 							<code>tabPanel()</code>
 						</li>
-						<li class="fragment"><code>navbarPage()</code> mit <code>tabPanel()</code>und
+						<li class="fragment"><code>navbarPage()</code> with <code>tabPanel()</code> and
 							<code>navbarMenu()</code>
 						</li>
 
 					</ul>
 
-					<p class="fragment" style="text-align: left; font-size: large;">Siehe auch:
+					<p class="fragment" style="text-align: left; font-size: large;">See also:
 						<a
 							href="https://shiny.posit.co/r/articles/build/layout-guide/">shiny.posit.co/r/articles/build/layout-guide/</a>
-						und
+						and
 						<a
 							href="https://mastering-shiny.org/action-layout.html">mastering-shiny.org/action-layout.html</a>
 
@@ -786,7 +805,7 @@
 
 				<section>
 
-					<p>Optionen shinyApps zu publishen</p>
+					<p>Options for publishing Shiny apps</p>
 
 
 					<div class="deploy">

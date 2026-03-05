@@ -38,3 +38,8 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+_*files
+/.quarto/
+**/*.quarto_ipynb
+*_files
